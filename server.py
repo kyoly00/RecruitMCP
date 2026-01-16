@@ -180,15 +180,14 @@ http_app = mcp.http_app(
 # Main Entry Point
 # ------------------------------------------------------------
 def main():
-    """Run MCP HTTP/SSE server with uvicorn."""
-    import uvicorn
-
-    uvicorn.run(
-        "server:http_app",
+    """Run the MCP server."""
+    mcp.run(
+        transport="streamable-http",
         host="0.0.0.0",
-        port=8000,
-        reload=True,
+        port=8001,
+        path="/mcp",
     )
+
 
 
 if __name__ == "__main__":
