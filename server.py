@@ -264,7 +264,13 @@ async def match_youth_programs_tool(
 
 def main():
     """Run the MCP server."""
-    mcp.run()
+    mcp.run(
+        transport="streamable-http",
+        host="0.0.0.0",
+        port=8001,
+        path="/mcp",
+    )
+
 
 
 if __name__ == "__main__":
